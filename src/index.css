@@ -7,7 +7,7 @@
   --card-border: #e5e5ea;
   --muted: #63636d;
   --accent: #3b82f6;
-  --accent-2: #f59e0b;
+  --accent-2: #1d4ed8;
   --ring: #3b82f6;
 }
 
@@ -19,7 +19,7 @@
     --card-border: #242430;
     --muted: #9a9aa5;
     --accent: #60a5fa;
-    --accent-2: #fbbf24;
+    --accent-2: #2563eb;
     color-scheme: dark;
   }
 }
@@ -31,7 +31,7 @@
   --card-border: #242430;
   --muted: #9a9aa5;
   --accent: #60a5fa;
-  --accent-2: #fbbf24;
+  --accent-2: #2563eb;
   color-scheme: dark;
 }
 
