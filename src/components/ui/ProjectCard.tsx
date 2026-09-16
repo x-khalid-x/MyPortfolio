@@ -24,6 +24,8 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             src={project.image}
             alt={project.imageAlt}
             loading="lazy"
+            width={project.imageWidth}
+            height={project.imageHeight}
             className={
               project.imageFit === "contain"
                 ? "size-full object-contain transition-transform duration-500 group-hover:scale-105"
