@@ -73,6 +73,8 @@ export type Project = {
   result?: string;
   image: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
   imageFit?: "cover" | "contain";
   links: ProjectLink[];
 };
@@ -93,8 +95,10 @@ export const projects: Project[] = [
       "Interface web FastAPI + Jinja2",
     ],
     stack: ["Python", "FastAPI", "scikit-learn", "PostgreSQL", "OSRM", "Docker"],
-    image: "/images/projects/sir-patient.png",
+    image: "/images/projects/sir-patient.webp",
     imageAlt: "Capture d'écran du classement des hôpitaux recommandés dans l'application SIR-Patient",
+    imageWidth: 1210,
+    imageHeight: 390,
     imageFit: "contain",
     links: [],
   },
@@ -115,8 +119,10 @@ export const projects: Project[] = [
     stack: ["Python", "scikit-learn", "NLTK", "Pandas", "Streamlit"],
     result:
       "97% d'accuracy sur la classification spam/non-spam (régression logistique, dataset SMS Spam Collection).",
-    image: "/images/projects/spam-detection.png",
+    image: "/images/projects/spam-detection.webp",
     imageAlt: "Capture d'écran de l'application Streamlit de détection de spam",
+    imageWidth: 1900,
+    imageHeight: 883,
     links: [
       { label: "Démo en ligne", url: "https://spam-detection-ml-wy7s2z2w4ycbxbvxtnwwvb.streamlit.app" },
       { label: "Code source", url: "https://github.com/x-khalid-x/spam-detection-ml" },

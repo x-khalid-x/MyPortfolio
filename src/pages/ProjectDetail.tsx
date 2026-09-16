@@ -71,6 +71,8 @@ export default function ProjectDetail() {
             src={project.image}
             alt={project.imageAlt}
             loading="eager"
+            width={project.imageWidth}
+            height={project.imageHeight}
             className={
               project.imageFit === "contain"
                 ? "w-full object-contain"

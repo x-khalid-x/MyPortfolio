@@ -123,6 +123,8 @@ export function Hero() {
               src={profile.avatar}
               alt={`Photo de ${profile.name}`}
               loading="eager"
+              width={322}
+              height={321}
               className="size-full object-cover"
             />
           </div>
