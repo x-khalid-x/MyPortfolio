@@ -1,8 +1,6 @@
-"use client";
-
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import type { Project } from "@/data/content";
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -14,29 +12,34 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group overflow-hidden rounded-3xl border border-card-border bg-card transition-shadow hover:shadow-xl hover:shadow-black/[0.04]"
     >
-      <div
-        className={
-          project.imageFit === "contain"
-            ? "relative aspect-[16/10] w-full overflow-hidden bg-white p-4"
-            : "relative aspect-[16/10] w-full overflow-hidden bg-background"
-        }
-      >
-        <Image
-          src={project.image}
-          alt={project.imageAlt}
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
+      <Link to={`/projects/${project.slug}`} className="block">
+        <div
           className={
             project.imageFit === "contain"
-              ? "object-contain transition-transform duration-500 group-hover:scale-105"
-              : "object-cover transition-transform duration-500 group-hover:scale-105"
+              ? "relative aspect-[16/10] w-full overflow-hidden bg-white p-4"
+              : "relative aspect-[16/10] w-full overflow-hidden bg-background"
           }
-        />
-      </div>
+        >
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            loading="lazy"
+            className={
+              project.imageFit === "contain"
+                ? "size-full object-contain transition-transform duration-500 group-hover:scale-105"
+                : "size-full object-cover transition-transform duration-500 group-hover:scale-105"
+            }
+          />
+        </div>
+      </Link>
 
       <div className="p-6">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="text-xl font-semibold">{project.title}</h3>
+          <h3 className="text-xl font-semibold">
+            <Link to={`/projects/${project.slug}`} className="hover:text-accent">
+              {project.title}
+            </Link>
+          </h3>
           <span className="shrink-0 text-xs text-muted">{project.date}</span>
         </div>
 
@@ -64,8 +67,14 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           ))}
         </div>
 
-        {project.links.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-4">
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link
+            to={`/projects/${project.slug}`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+          >
+            Voir le projet
+            <ArrowRight size={14} />
+          </Link>
           {project.links.map((link) => (
             <a
               key={link.url}
@@ -79,7 +88,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             </a>
           ))}
         </div>
-        )}
       </div>
     </motion.article>
   );

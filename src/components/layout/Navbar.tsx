@@ -1,9 +1,7 @@
-"use client";
-
 import { useState } from "react";
-import Link from "next/link";
+import { Link, useLocation } from "react-router-dom";
 import { Download, Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { profile } from "@/data/content";
 
 const navLinks = [
@@ -16,6 +14,8 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const onHome = location.pathname === "/";
 
   return (
     <header className="sticky top-4 z-50 px-4">
@@ -23,21 +23,32 @@ export function Navbar() {
         aria-label="Navigation principale"
         className="relative mx-auto flex max-w-4xl items-center justify-between rounded-full border border-card-border bg-card/80 px-5 py-2.5 shadow-lg shadow-black/[0.03] backdrop-blur-md"
       >
-        <Link href="#top" className="text-base font-semibold tracking-tight">
+        <Link to="/#top" className="text-base font-semibold tracking-tight">
           Khalid<span className="gradient-text">.</span>
         </Link>
 
         <ul className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm text-muted transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link) =>
+            onHome ? (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link
+                  to={`/${link.href}`}
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -68,17 +79,29 @@ export function Navbar() {
         {open && (
           <div className="absolute inset-x-0 top-full mt-2 rounded-3xl border border-card-border bg-card p-4 shadow-lg md:hidden">
             <ul className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-xl px-3 py-2.5 text-sm text-muted transition-colors hover:bg-background hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) =>
+                onHome ? (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-3 py-2.5 text-sm text-muted transition-colors hover:bg-background hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <Link
+                      to={`/${link.href}`}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-3 py-2.5 text-sm text-muted transition-colors hover:bg-background hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              )}
               <li className="pt-2">
                 <a
                   href={profile.cvUrl}

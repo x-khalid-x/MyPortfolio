@@ -1,26 +1,8 @@
-"use client";
-
-import { useSyncExternalStore } from "react";
-import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-
-const emptySubscribe = () => () => {};
-function useMounted() {
-  return useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
-}
+import { useTheme } from "@/hooks/useTheme";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const mounted = useMounted();
-
-  if (!mounted) {
-    return <div className="size-9" aria-hidden="true" />;
-  }
-
   const isDark = resolvedTheme === "dark";
 
   return (

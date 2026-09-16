@@ -1,9 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Sparkles } from "lucide-react";
 import { languages, profile } from "@/data/content";
-import { SectionHeading } from "@/components/SectionHeading";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const tileMotion = {
   initial: { opacity: 0, y: 16 },
