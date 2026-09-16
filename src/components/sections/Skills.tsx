@@ -1,9 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { skillCategories } from "@/data/content";
-import { SectionHeading } from "@/components/SectionHeading";
-import { TechIcon } from "@/components/TechIcon";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TechIcon } from "@/components/ui/TechIcon";
 
 const spanByCategory: Record<string, string> = {
   Langages: "col-span-4 md:col-span-2",
@@ -19,8 +17,8 @@ export function Skills() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Compétences"
-          title="Ce que je maîtrise"
-          description="Un socle technique construit à l'école et à travers des projets personnels, orienté développement web et data."
+          title="Technologies & notions"
+          description="Ce que j'utilise en projet et ce que j'étudie à l'école : langages et outils pratiqués, notions de data & ML explorées en cours et en autonomie."
         />
 
         <div className="grid grid-cols-4 gap-4">

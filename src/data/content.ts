@@ -70,6 +70,7 @@ export type Project = {
   description: string;
   highlights: string[];
   stack: string[];
+  result?: string;
   image: string;
   imageAlt: string;
   imageFit?: "cover" | "contain";
@@ -112,6 +113,8 @@ export const projects: Project[] = [
       "Historique des analyses et persistance du modèle (pickle)",
     ],
     stack: ["Python", "scikit-learn", "NLTK", "Pandas", "Streamlit"],
+    result:
+      "97% d'accuracy sur la classification spam/non-spam (régression logistique, dataset SMS Spam Collection).",
     image: "/images/projects/spam-detection.png",
     imageAlt: "Capture d'écran de l'application Streamlit de détection de spam",
     links: [

@@ -1,10 +1,6 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Brain, Download, GraduationCap, Mail, MapPin, Sparkles } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 import { links, profile } from "@/data/content";
 
 const statTiles = [
@@ -49,20 +45,26 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              Voir mes projets
+              <ArrowRight size={16} />
+            </a>
+            <a
               href={profile.cvUrl}
               download={profile.cvFileName}
-              className="inline-flex items-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex items-center gap-2 rounded-full border border-card-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               <Download size={16} />
               Télécharger mon CV
             </a>
-            <Link
+            <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-card-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               Me contacter
-              <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
 
           <div className="mt-8 flex items-center gap-4">
@@ -117,13 +119,11 @@ export function Hero() {
             className="absolute inset-0 rounded-[2rem] gradient-bg opacity-90 blur-md"
           />
           <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-card-border/50 shadow-2xl">
-            <Image
+            <img
               src={profile.avatar}
               alt={`Photo de ${profile.name}`}
-              fill
-              priority
-              sizes="(min-width: 1024px) 24rem, 80vw"
-              className="object-cover"
+              loading="eager"
+              className="size-full object-cover"
             />
           </div>
         </motion.div>

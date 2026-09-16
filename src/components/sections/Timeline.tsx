@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Award, Briefcase, ExternalLink, GraduationCap } from "lucide-react";
 import {
@@ -8,7 +6,7 @@ import {
   experienceTimeline,
   type TimelineItem,
 } from "@/data/content";
-import { SectionHeading } from "@/components/SectionHeading";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 function TimelineGroup({
   icon: Icon,
