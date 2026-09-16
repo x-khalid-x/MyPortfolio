@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://khalidchliyahe.vercel.app";
+const SITE_URL = "https://khalid-portfolio-gamma-three.vercel.app";
 const SITE_NAME = "Khalid Chliyahe — Portfolio";
 
 type SEOOptions = {
