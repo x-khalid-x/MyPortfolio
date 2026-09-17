@@ -16,6 +16,7 @@ export default function ProjectDetail() {
       ? project.description
       : "Ce projet n'existe pas ou a été déplacé.",
     path: project ? `/projects/${project.slug}` : "/404",
+    noindex: !project,
     jsonLd: project
       ? {
           "@context": "https://schema.org",

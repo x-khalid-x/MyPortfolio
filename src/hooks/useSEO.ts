@@ -92,7 +92,6 @@ export function useSEO({ title, description, path, jsonLd, noindex }: SEOOptions
     setMetaByProperty("og:locale", "fr_FR");
     setMetaByProperty("og:type", jsonLd?.["@type"] === "Person" ? "profile" : "article");
 
-    setMetaByName("twitter:card", "summary");
     setMetaByName("twitter:title", title);
     setMetaByName("twitter:description", description);
 
