@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function NotFound() {
+  useSEO({
+    title: "Page introuvable — Khalid Chliyahe | Portfolio",
+    description:
+      "La page demandée est introuvable. Retournez au portfolio de Khalid Chliyahe.",
+    path: "/404",
+    noindex: true,
+  });
+
   return (
     <section className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-32 text-center">
       <p className="text-sm font-medium uppercase tracking-widest text-accent">404</p>
