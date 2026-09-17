@@ -8,6 +8,7 @@ type SEOOptions = {
   description: string;
   path: string;
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 };
 
 function setMetaByName(name: string, content: string) {
@@ -30,14 +31,36 @@ function setMetaByProperty(property: string, content: string) {
   el.setAttribute("content", content);
 }
 
-function setCanonical(href: string) {
-  let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!el) {
-    el = document.createElement("link");
-    el.setAttribute("rel", "canonical");
-    document.head.appendChild(el);
+function setCanonical(href: string | null) {
+  const el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (href === null) {
+    el?.remove();
+    return;
   }
-  el.setAttribute("href", href);
+  if (el) {
+    el.setAttribute("href", href);
+    return;
+  }
+  const created = document.createElement("link");
+  created.setAttribute("rel", "canonical");
+  created.setAttribute("href", href);
+  document.head.appendChild(created);
+}
+
+function setOrRemoveMetaByName(name: string, content: string | null) {
+  const el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+  if (content === null) {
+    el?.remove();
+    return;
+  }
+  if (el) {
+    el.setAttribute("content", content);
+    return;
+  }
+  const created = document.createElement("meta");
+  created.setAttribute("name", name);
+  created.setAttribute("content", content);
+  document.head.appendChild(created);
 }
 
 function setJsonLd(id: string, data: Record<string, unknown>) {
@@ -53,13 +76,14 @@ function setJsonLd(id: string, data: Record<string, unknown>) {
 
 const JSON_LD_ID = "seo-jsonld";
 
-export function useSEO({ title, description, path, jsonLd }: SEOOptions) {
+export function useSEO({ title, description, path, jsonLd, noindex }: SEOOptions) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
 
     document.title = title;
     setMetaByName("description", description);
-    setCanonical(url);
+    setCanonical(noindex ? null : url);
+    setOrRemoveMetaByName("robots", noindex ? "noindex, nofollow" : null);
 
     setMetaByProperty("og:title", title);
     setMetaByProperty("og:description", description);
@@ -75,7 +99,7 @@ export function useSEO({ title, description, path, jsonLd }: SEOOptions) {
     if (jsonLd) {
       setJsonLd(JSON_LD_ID, jsonLd);
     }
-  }, [title, description, path, jsonLd]);
+  }, [title, description, path, jsonLd, noindex]);
 }
 
 export { SITE_URL };
