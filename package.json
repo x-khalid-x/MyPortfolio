@@ -23,7 +23,7 @@
     "@types/node": "^22.20.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^9",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.18",
@@ -31,6 +31,6 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "typescript-eslint": "^8.19.1",
-    "vite": "^6.0.7"
+    "vite": "^8.3.0"
   }
 }
