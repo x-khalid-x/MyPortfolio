@@ -71,6 +71,7 @@ export type Project = {
   highlights: string[];
   stack: string[];
   result?: string;
+  availabilityNote?: string;
   image: string;
   imageAlt: string;
   imageWidth: number;
@@ -95,6 +96,8 @@ export const projects: Project[] = [
       "Interface web FastAPI + Jinja2",
     ],
     stack: ["Python", "FastAPI", "scikit-learn", "PostgreSQL", "OSRM", "Docker"],
+    availabilityNote:
+      "Projet réalisé dans le cadre d'un stage au CHU Hassan II Fès : le code et les données restent la propriété du CHU et ne sont pas rendus publics.",
     image: "/images/projects/sir-patient.webp",
     imageAlt: "Capture d'écran du classement des hôpitaux recommandés dans l'application SIR-Patient",
     imageWidth: 1210,

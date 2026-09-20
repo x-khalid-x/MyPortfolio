@@ -145,6 +145,15 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
+
+        {project.availabilityNote && (
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold">Disponibilité</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              {project.availabilityNote}
+            </p>
+          </section>
+        )}
       </div>
     </article>
   );
