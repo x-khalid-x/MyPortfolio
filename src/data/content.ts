@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "FastAPI", "scikit-learn", "PostgreSQL", "OSRM", "Docker"],
     availabilityNote:
-      "Projet réalisé dans le cadre d'un stage au CHU Hassan II Fès : le code et les données restent la propriété du CHU et ne sont pas rendus publics.",
+      "Projet réalisé dans le cadre de mon stage au CHU Hassan II Fès. Le code source et les données ne sont pas publiés, car le projet a été réalisé dans un contexte hospitalier et n'est pas destiné à une diffusion publique.",
     image: "/images/projects/sir-patient.webp",
     imageAlt: "Capture d'écran du classement des hôpitaux recommandés dans l'application SIR-Patient",
     imageWidth: 1210,
