@@ -86,7 +86,7 @@ export const projects: Project[] = [
     title: "SIR-Patient",
     date: "Juillet – Août 2026",
     description:
-      "Système d'aide à l'orientation des patients développé lors de mon stage au CHU Hassan II Fès. À partir des symptômes décrits en français, l'application recommande l'hôpital le plus adapté du réseau CHU Hassan II Fès-Meknès.",
+      "Système d'aide à l'orientation des patients développé seul lors de mon stage au CHU Hassan II Fès. À partir des symptômes décrits en français, l'application recommande l'hôpital le plus adapté du réseau CHU Hassan II Fès-Meknès.",
     highlights: [
       "Classification NLP des symptômes vers l'un des 9 services médicaux (TF-IDF + SVM linéaire)",
       "Classement multicritère des hôpitaux (méthode SAW) avec pondération automatique par entropie de Shannon",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     title: "Spam Detection ML",
     date: "Janvier 2026",
     description:
-      "Système de classification de spam pour SMS en anglais, avec pipeline NLP complet et application web interactive déployée en ligne.",
+      "Système de classification de spam pour SMS en anglais, réalisé en équipe, avec pipeline NLP complet et application web interactive déployée en ligne.",
     highlights: [
       "Pipeline NLP : nettoyage, suppression des stopwords, stemming",
       "Vectorisation TF-IDF (unigrammes et bigrammes)",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "scikit-learn", "NLTK", "Pandas", "Streamlit"],
     result:
-      "97% d'accuracy sur la classification spam/non-spam (régression logistique, dataset SMS Spam Collection).",
+      "97% d'accuracy sur la classification spam/non-spam avec une régression logistique (dataset SMS Spam Collection), sur un split 80/20 stratifié, après comparaison de plusieurs modèles.",
     image: "/images/projects/spam-detection.webp",
     imageAlt: "Capture d'écran de l'application Streamlit de détection de spam",
     imageWidth: 1900,
