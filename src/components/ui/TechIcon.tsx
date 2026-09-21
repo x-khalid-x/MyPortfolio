@@ -3,6 +3,9 @@ import {
   siC,
   siCplusplus,
   siCss,
+  siDocker,
+  siFastapi,
+  siFramer,
   siGit,
   siGithub,
   siHtml5,
@@ -11,13 +14,17 @@ import {
   siNumpy,
   siPandas,
   siPhp,
+  siPostgresql,
   siPython,
   siR,
   siReact,
   siScikitlearn,
+  siTailwindcss,
+  siTypescript,
   siUml,
+  siVite,
 } from "simple-icons";
-import { Brain, Code2, Coffee, Database, LineChart, Network } from "lucide-react";
+import { Brain, Code2, Coffee, Database, Languages, LineChart, Network } from "lucide-react";
 
 type SimpleIconData = { title: string; path: string; hex: string };
 
@@ -38,6 +45,13 @@ const BRAND_ICONS: Record<string, SimpleIconData> = {
   C: siC,
   "C++": siCplusplus,
   UML: siUml,
+  TypeScript: siTypescript,
+  "Tailwind CSS": siTailwindcss,
+  Vite: siVite,
+  "Framer Motion": siFramer,
+  FastAPI: siFastapi,
+  PostgreSQL: siPostgresql,
+  Docker: siDocker,
 };
 
 const FALLBACK_ICONS: Record<string, ComponentType<{ size?: number; className?: string }>> = {
@@ -45,6 +59,8 @@ const FALLBACK_ICONS: Record<string, ComponentType<{ size?: number; className?: 
   SQL: Database,
   "SQL Server": Database,
   Matplotlib: LineChart,
+  NLTK: Languages,
+  "NLP / TF-IDF": Languages,
   "VS Code": Code2,
   "Apprentissage supervisé": Brain,
   "Apprentissage non supervisé": Network,

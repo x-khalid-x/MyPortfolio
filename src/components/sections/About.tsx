@@ -62,7 +62,6 @@ export function About() {
                   className="rounded-full border border-card-border bg-background px-3 py-1.5 text-sm"
                 >
                   {lang.name}
-                  <span className="ml-1.5 text-xs text-muted">{lang.level}</span>
                 </span>
               ))}
             </div>

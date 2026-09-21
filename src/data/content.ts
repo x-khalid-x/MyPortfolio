@@ -18,9 +18,9 @@ export const links = {
 };
 
 export const languages = [
-  { name: "Arabe", level: "Langue maternelle" },
-  { name: "Français", level: "Bilingue" },
-  { name: "Anglais", level: "Courant" },
+  { name: "Arabe" },
+  { name: "Français" },
+  { name: "Anglais" },
 ];
 
 export type SkillCategory = {
@@ -31,11 +31,11 @@ export type SkillCategory = {
 export const skillCategories: SkillCategory[] = [
   {
     title: "Langages",
-    skills: ["Python", "Java", "C", "C++", "R", "SQL", "JavaScript"],
+    skills: ["Python", "Java", "C", "C++", "R", "SQL", "JavaScript", "TypeScript"],
   },
   {
     title: "Développement Web",
-    skills: ["HTML", "CSS", "JavaScript", "React.js", "PHP"],
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "PHP", "Tailwind CSS", "Vite", "Framer Motion", "FastAPI"],
   },
   {
     title: "Data & Machine Learning",
@@ -44,17 +44,19 @@ export const skillCategories: SkillCategory[] = [
       "NumPy",
       "Pandas",
       "Matplotlib",
+      "NLTK",
+      "NLP / TF-IDF",
       "Apprentissage supervisé",
       "Apprentissage non supervisé",
     ],
   },
   {
     title: "Bases de données",
-    skills: ["MySQL", "SQL Server"],
+    skills: ["MySQL", "SQL Server", "PostgreSQL"],
   },
   {
     title: "Outils & Modélisation",
-    skills: ["Git", "GitHub", "VS Code", "UML"],
+    skills: ["Git", "GitHub", "Docker", "VS Code", "UML"],
   },
 ];
 
