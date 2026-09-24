@@ -116,14 +116,14 @@ export const projects: Project[] = [
     highlights: [
       "Pipeline NLP : nettoyage, suppression des stopwords, stemming",
       "Vectorisation TF-IDF (unigrammes et bigrammes)",
-      "Classification par régression logistique — 97% d'accuracy",
+      "Classification par régression logistique — 96,68% d'accuracy",
       "Dataset SMS Spam Collection (Kaggle)",
       "Application Streamlit : analyse unitaire ou par lot, avec score de probabilité",
       "Historique des analyses et persistance du modèle (pickle)",
     ],
     stack: ["Python", "scikit-learn", "NLTK", "Pandas", "Streamlit"],
     result:
-      "97% d'accuracy sur la classification spam/non-spam avec une régression logistique (dataset SMS Spam Collection), sur un split 80/20 stratifié, après comparaison de plusieurs modèles.",
+      "96,68% d'accuracy sur la classification spam/non-spam avec une régression logistique (dataset SMS Spam Collection), sur un split 80/20 stratifié, après comparaison de plusieurs modèles.",
     image: "/images/projects/spam-detection.webp",
     imageAlt: "Capture d'écran de l'application Streamlit de détection de spam",
     imageWidth: 1900,
