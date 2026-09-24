@@ -97,7 +97,7 @@ export const projects: Project[] = [
       "Génération d'un bon de rendez-vous au format PDF avec QR code",
       "Interface web FastAPI + Jinja2",
     ],
-    stack: ["Python", "FastAPI", "scikit-learn", "PostgreSQL", "OSRM", "Docker"],
+    stack: ["Python", "FastAPI", "scikit-learn", "spaCy", "PostgreSQL", "OSRM", "Docker"],
     availabilityNote:
       "Projet réalisé dans le cadre de mon stage au CHU Hassan II Fès. Le code source et les données ne sont pas publiés, car le projet a été réalisé dans un contexte hospitalier et n'est pas destiné à une diffusion publique.",
     image: "/images/projects/sir-patient.webp",
