@@ -45,6 +45,7 @@ export const skillCategories: SkillCategory[] = [
       "Pandas",
       "Matplotlib",
       "NLTK",
+      "spaCy",
       "NLP / TF-IDF",
       "Apprentissage supervisé",
       "Apprentissage non supervisé",

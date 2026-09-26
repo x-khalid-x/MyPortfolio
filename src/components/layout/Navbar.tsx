@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Download, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -16,6 +16,37 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const onHome = location.pathname === "/";
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Fermeture clavier (Escape) et clic/tap en dehors du menu mobile.
+  // Écouteurs attachés uniquement pendant que le menu est ouvert.
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (menuRef.current?.contains(target) || triggerRef.current?.contains(target)) {
+        return;
+      }
+      setOpen(false);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-4 z-50 px-4">
@@ -66,10 +97,12 @@ export function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
+            ref={triggerRef}
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
+            aria-controls="mobile-menu"
             className="flex size-9 items-center justify-center rounded-full border border-card-border text-foreground"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
@@ -77,7 +110,11 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className="absolute inset-x-0 top-full mt-2 rounded-3xl border border-card-border bg-card p-4 shadow-lg md:hidden">
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            className="absolute inset-x-0 top-full mt-2 rounded-3xl border border-card-border bg-card p-4 shadow-lg md:hidden"
+          >
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) =>
                 onHome ? (

@@ -12,7 +12,10 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group overflow-hidden rounded-3xl border border-card-border bg-card transition-shadow hover:shadow-xl hover:shadow-black/[0.04]"
     >
-      <Link to={`/projects/${project.slug}`} className="block">
+      <Link
+        to={`/projects/${project.slug}`}
+        className="block focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-accent"
+      >
         <div
           className={
             project.imageFit === "contain"

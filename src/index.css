@@ -75,3 +75,16 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Focus clavier global (:focus-visible uniquement, pas au clic souris/tactile).
+   Placé dans @layer base pour que les classes Tailwind focus-visible:* des
+   composants (boutons CV, CTA, ThemeToggle, ProjectCard) restent prioritaires :
+   en Tailwind v4, le CSS non calqué (unlayered) prime toujours sur le CSS calqué,
+   quelle que soit la spécificité — @layer base est donc nécessaire ici. */
+@layer base {
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
