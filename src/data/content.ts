@@ -1,9 +1,9 @@
 export const profile = {
   name: "Khalid Chliyahe",
   tagline: "Étudiant en Génie Informatique | Passionné d'IA & Data",
-  bio: "Étudiant en Génie Informatique, passionné d'IA et de Data. J'aime explorer comment les données peuvent raconter une histoire et comment le machine learning peut la transformer en décision.",
+  bio: "Étudiant en Génie Informatique, je m’intéresse à la conception de solutions technologiques et à la valorisation des données. Mon objectif est de continuer à développer une approche solide et polyvalente à travers des projets concrets.",
   bioExtended:
-    "En 2ème année à l'ENSA Fès, c'est l'intelligence artificielle et la data qui m'attirent le plus : comprendre comment un modèle apprend, tester ses limites, et voir ce que ça donne une fois mis en pratique.",
+    "Étudiant en 2ᵉ année de Génie Informatique à l’ENSA Fès, avec un intérêt particulier pour l’AI Engineering et la Data. Je développe mes compétences à travers des projets concrets, en combinant développement logiciel, traitement des données et technologies d’intelligence artificielle.",
   location: "Fès, Maroc",
   status: "Ouvert aux opportunités de stage",
   avatar: "/images/profile.jpeg",
